@@ -2,6 +2,21 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Dev: PHP + Xdebug (Default)",
+      "type": "php",
+      "request": "launch",
+      "runtimeExecutable": "php",
+      "runtimeArgs": ["-S", "0.0.0.0:8000", "server.php"],
+      "cwd": "${workspaceFolder}/application",
+      "program": "${workspaceFolder}/application/server.php",
+      "preLaunchTask": "npm: dev (application)",
+      "env": {
+        "XDEBUG_MODE": "develop,debug",
+        "XDEBUG_CONFIG": "client_host=host.docker.internal client_port=9003"
+      },
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
       "name": "Dev: Launch PHP Built-in Server (watch)",
       "type": "php",
       "request": "launch",
