@@ -39,3 +39,36 @@ Nginx or Apache (recommended) http server
 
 
 ### If you need technical support or feature request, you may email to us at seumoblondel@gmail.com
+
+## Development & Build
+
+Use these commands to build frontend assets and run the app locally.
+
+1. Enter the application folder:
+
+   cd application
+
+2. Install node dependencies (reproduce the committed lockfile):
+
+   npm ci
+
+   If `npm ci` fails for you, run:
+
+   npm install
+
+3. Development (watch) build — generates assets and watches for changes:
+
+   npm run dev
+
+4. Production build (optimized assets):
+
+   npm run production
+
+5. Start the PHP built-in server from the `application` folder:
+
+   php -S 0.0.0.0:8000 server.php
+
+Notes:
+- The workspace has a VS Code build task that runs `npm run dev` by default. Use `Terminal → Run Build Task...` or `Ctrl+Shift+B`.
+- If you see OpenSSL errors while building with Node >=17, the npm scripts include `NODE_OPTIONS=--openssl-legacy-provider` to work around Node/OpenSSL changes.
+
